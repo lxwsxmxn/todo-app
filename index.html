@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>TO-DO App</title>
+		<link rel="stylesheet" href="css/styles.css" />
+		<style>
+			.done {
+				text-decoration: line-through;
+				opacity: 80%;
+			}
+		</style>
+		<script src="javascript/main.js" language="JavaScript"></script>
+	</head>
+	<body> 
+		<div id="todo-heading-container" class="container">
+			<h1 id="todo-heading">TO-DO</h1>
+		</div>
+
+		<div id="todo-add-container" class="container">
+			<form id="todo-form" name="todo_form" action="" method="GET">
+				<input id="todo-input" type="text" name="todo_input" value="" required />
+				<input id="todo-add" name="add_button" type="button" value="ADD" onClick="addItem(this.form)" class="btn fbuttons"/>
+				<input id="todo-load" name="load_button" type="button" value="LOAD TODO LIST" onClick="reload()" class="btn fbuttons" >
+				<input id="todo-clear" name="clear_button" type="button" value="CLEAR LIST" onClick="clearTodoList()" class="btn fbuttons" >
+			</form>
+			<script>
+				const add = document.getElementById("todo-input");
+
+				add.addEventListener("keydown", event => {
+					if (event.key == "Enter") {
+						addItem(add.parentNode);
+						event.preventDefault();
+					}
+				});
+			</script>
+		</div>
+
+		<div id="todo-item-container" class="container" >
+		</div>
+	</body>
+</html>
