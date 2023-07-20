@@ -15,7 +15,7 @@ body {
 
 .container {
   width: 65%;
-  min-width: 470px;
+  min-width: 600px;
   max-width: 620px;
   display: flex;
   flex-direction: column;
